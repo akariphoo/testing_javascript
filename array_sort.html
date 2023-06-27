@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [20,10,3,100,9,34];
+        console.log(arr1.sort());
+        console.log(arr1.sort((a,b)=> a-b));
+
+        let arr2 = [
+            {
+                name : 'user1',
+                age : 10
+            },
+            {
+                name : 'user5',
+                age : 40
+            },
+            {
+                name : 'user3',
+                age : 20
+            },
+            {
+                name : 'user4',
+                age : 5
+            },
+        ];
+
+        console.log(arr2.sort());
+        console.log(arr2.sort((a,b) => a.age - b.age));  // ascending order with age
+        console.log(arr2.sort((a,b)=> b.age - a.age));  // descending order with age
+
+        console.log(arr2.sort((a,b)=> a.name.localeCompare(b.name))); // ascending order with name
+        console.log(arr2.reverse());
+
+        // array to string
+        let arr3 = [5,7,8];
+        let str1 = arr3.join(':');
+
+        let arr4 = str1.split(':'); // string to array
+        console.log(str1, arr4);
+        console.log(Array.isArray(arr4), Array.isArray(str1));
+
+    </script>   
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1 = {
+            name : "Akari",
+            age : 23
+        };
+        let obj2 = {
+            name : obj1.name,
+            age : obj1.age
+        };
+        console.log(obj1);
+        console.log(obj2);
+
+        obj1['nick_name'] = "akp";
+        let prop_name = "nick_name";
+        console.log(obj1[prop_name]);
+
+        let obj3 = {
+            [prop_name] : "Phoo",
+            prop_name : "Akari Phoo"
+        };
+
+        console.log(obj3);
+       
+    </script>
+</body>
+</html>

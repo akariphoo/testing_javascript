@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj1 = {
+            x : 100,
+            y : 200,
+            arr : [400, 500]
+        };
+
+        let obj2 = {
+            z : 300
+        };
+        let obj3 = {
+            ...obj1,
+            ...obj2
+        };
+        let obj4 = obj1.arr.push(600);
+        console.log(obj4, obj1, obj2, obj3);
+    </script>
+</body>
+</html>

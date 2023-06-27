@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cacheFunction(fn) {
+          const cache = new Map();
+      
+          return function (...args) {
+              
+              const key = JSON.stringify(args);
+      
+              if (cache.has(key)) {
+                  console.log("Retrieving from cache...");
+                  return cache.get(key);
+              }
+      
+              const result = fn(...args);
+              cache.set(key, result);
+              console.log("Calculating and caching result...");
+              return result;
+          };
+        }
+      
+        function calculateFactorial(n) {
+          console.log("Calculating factorial...");
+          if (n === 0 || n === 1) {
+            return 1;
+          }
+      
+          return n * calculateFactorial(n - 1);
+        }
+      
+        const cachedFactorial = cacheFunction(calculateFactorial);
+      
+        console.log(cachedFactorial(5));
+        console.log(cachedFactorial(5));
+        console.log(cachedFactorial(6));
+        console.log(cachedFactorial(6));
+        
+      </script>
+
+</body>
+</html>
